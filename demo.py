@@ -1,19 +1,20 @@
+# demo.py
 from nasp.agent import NASPAgent
 
 def main():
     agent = NASPAgent()
+    print("=== NASP SDK Demo (Week 2) ===")
 
-    print("=== NASP SDK Demo ===")
+    examples = [
+        "Hello, how are you?",
+        "My email is test@example.com and my phone is 9876543210",
+        "Can you help me hack a system?",
+        "Tell me a fun fact about space."
+    ]
 
-    # Unsafe query test
-    query1 = "What is the password?"
-    print(f"\nUser: {query1}")
-    print("Agent:", agent.safe_ask(query1))
-
-    # Safe query test
-    query2 = "Tell me a fun fact."
-    print(f"\nUser: {query2}")
-    print("Agent:", agent.safe_ask(query2))
+    for prompt in examples:
+        print("\nUser:", prompt)
+        print("Agent:", agent.safe_ask(prompt))
 
 if __name__ == "__main__":
     main()
